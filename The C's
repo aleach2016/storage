@@ -1,0 +1,13 @@
+
+import random
+# I found the operation to input a random integer as per instructions for the Problem part of it and for the answer part I did simple math to find u and v
+a = random.randrange(-9, 9)
+b = random.randrange(-9, 9)
+c = random.randrange(-9, 9)
+d = random.randrange(-9, 9)
+e = random.randrange(-9, 9)
+u = a + c * d
+v = b + c * e
+print ('Problem : ({a} x + {b}) + {c}({d} x + {e}) = ?'.format( a = a ,
+b = b , c = c , d = d , e = e ))
+print ('Answer : {u} x + {v}'. format ( u = u , v = v ))
