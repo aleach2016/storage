@@ -2,23 +2,47 @@
 
 from __future__ import division
 from __future__ import print_function
-from math import log, exp
-
+from math import log, exp, floor
+import math
 def days_cost(day):
 	return int(4 + 0.3 * day)
 
 def get_glasses(day):
+	"""
+	>>> get_glasses(8)
+	12
+	"""
+	"""
+	>>>get_glasses(22):
+	0
+	"""
 	if day < 9:
 		return 12
 	return 0
 
 def get_price(day):
+	"""
+	>>> get_price(22)
+	8
+	"""
 	return 8
 
 def get_signs(day, assets, sign_cost):
+	"""
+	>>> get_signs(8, 22, 122)
+	1
+	"""
 	return 1
 
 def base_demand(price):
+	"""
+	>>> base_demand(8)
+	56.8
+	"""
+	"""
+	>>> base_demand(50)
+	0
+	"""
 	return max(108 - 0.8 * price * price, 0)
 
 def advertising_multiplier(signs):
@@ -82,21 +106,22 @@ for day in range(days):
 	print('')
 	original_assets = assets
 	glasses = glasses * glasses % 31
-	  """
-	  The amount of glasses available is determined by the above equation
-	  """
+	"""
+	The amount of glasses available is determined by the above equation
+	"""
 	lemonade_cost = glasses * cost
 	assets -= lemonade_cost
-	  """
-	  The amount of currency left is subtracted from your total costs everyday.
-	  """
+	"""
+	The amount of currency left is subtracted from your total costs everyday.
+	"""
 	price = math.floor(4 + 0.3 * day) + (day % 4) + 2
-	  """
-	  The price of a glass of lemonade is determined by the above equation.
-	  """
+	"""
+	The price of a glass of lemonade is determined by the above equation.
+	"""
 	signs = price / 21
-	  """
-	  The cost of a sign is directly related to the price of a glass of lemonade as stated in the function above.
+	"""
+	The cost of a sign is directly related to the price of a glass of lemonade as stated in the function above.
+	"""
 	advertising_cost = signs * sign_cost
 	assets -= advertising_cost
 	#I changed the functions used to find the amount of glasses and the prices of the lemonade and the signs using the functions and substitutions provided.
