@@ -87,11 +87,16 @@ for day in range(days):
 	  """
 	lemonade_cost = glasses * cost
 	assets -= lemonade_cost
+	  """
+	  The amount of currency left is subtracted from your total costs everyday.
+	  """
 	price = math.floor(4 + 0.3 * day) + (day % 4) + 2
 	  """
 	  The price of a glass of lemonade is determined by the above equation.
 	  """
 	signs = price / 21
+	  """
+	  The cost of a sign is directly related to the price of a glass of lemonade as stated in the function above.
 	advertising_cost = signs * sign_cost
 	assets -= advertising_cost
 	#I changed the functions used to find the amount of glasses and the prices of the lemonade and the signs using the functions and substitutions provided.
